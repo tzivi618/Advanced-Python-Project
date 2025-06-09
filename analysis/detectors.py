@@ -56,7 +56,7 @@ def unused_variable_detector(file_path):
         })
     return issues
 
-def DocstringDetector(file_path):
+def docstring_detector(file_path):
     issues = []
     with open(file_path, encoding="utf-8") as f:
         source = f.read()
@@ -72,7 +72,7 @@ def DocstringDetector(file_path):
                 })
     return issues
 
-def NonEnglishVarDetector(file_path):
+def non_english_var_detector(file_path):
     issues = []
     non_english_pattern = re.compile(r'[^\x00-\x7F]')
     with open(file_path, encoding="utf-8") as f:
@@ -88,3 +88,4 @@ def NonEnglishVarDetector(file_path):
                     "line_number": node.lineno
                 })
     return issues
+
