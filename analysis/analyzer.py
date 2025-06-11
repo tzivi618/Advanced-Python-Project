@@ -8,7 +8,6 @@ from .detectors import (
 
 import tempfile
 import os
-import re
 import ast
 class Analyzer:
     def __init__(self):
