@@ -1,13 +1,25 @@
-# models/Session.py
-from sqlalchemy import Column, Integer, DateTime, create_engine
-from sqlalchemy.ext.declarative import declarative_base
+"""# models/Session.py
+from sqlalchemy import Column, Integer, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
-import datetime
-
-Base = declarative_base()
+from datetime import datetime
+from .Alert import Base
 
 class Session(Base):
     __tablename__ = "sessions"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    path_id = Column(Integer, ForeignKey("paths.id"))
+    timestamp = Column(DateTime, default=datetime.utcnow)
     alerts = relationship("Alert", back_populates="session")
+    path = relationship("Path")"""
+from sqlalchemy import Column, Integer, ForeignKey, DateTime
+from sqlalchemy.orm import relationship
+from datetime import datetime
+from .Base import Base
+
+class Session(Base):
+    __tablename__ = "sessions"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    path_id = Column(Integer, ForeignKey("paths.id"))
+    timestamp = Column(DateTime, default=datetime.utcnow)
+    alerts = relationship("Alert", back_populates="session")
+    path = relationship("Path")
