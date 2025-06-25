@@ -21,6 +21,7 @@ DATABASE_URL = "mssql+pyodbc://localhost/IssuesInPython3?driver=ODBC+Driver+17+f
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base.metadata.create_all(bind=engine)"""
+# models/Alert.py
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from .Base import Base  # תראה הסבר למטה

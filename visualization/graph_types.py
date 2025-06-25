@@ -1,3 +1,4 @@
+#graph_types.py
 from enum import Enum
 
 class GraphType(Enum):

@@ -1,3 +1,4 @@
+#analyzer.py
 from .detectors import (
     function_length_detector,
     file_length_detector,
