@@ -75,7 +75,8 @@ http://localhost:8000
 ---
 
 ##  Link to the client repository
-Client repo: `client-repo-link` 
+Client repo: 
+https://github.com/tzivi618/wit-client-py
 
 ---
 
